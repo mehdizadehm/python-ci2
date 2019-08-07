@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="3" name="pytest" skipped="0" tests="3" time="0.035"><testcase classname="test_sample1" file="test_sample1.py" line="2" name="test_file1_method1" time="0.001"><failure message="AssertionError: test failed
+assert 5 == 6
+  -5
+  +6">def test_file1_method1():
+        x=5
+        y=6
+        assert x+1 == y,&quot;test failed&quot;
+&gt;       assert x == y,&quot;test failed&quot;
+E       AssertionError: test failed
+E       assert 5 == 6
+E         -5
+E         +6
+
+test_sample1.py:7: AssertionError</failure></testcase><testcase classname="test_sample1" file="test_sample1.py" line="9" name="test_file1_method2" time="0.001"><failure message="AssertionError: test failed without any reason! :)) 
+assert 52 == 6
+  -52
+  +6">def test_file1_method2():
+        x=51
+        y=6
+&gt;       assert x+1 == y,&quot;test failed without any reason! :)) &quot;
+E       AssertionError: test failed without any reason! :)) 
+E       assert 52 == 6
+E         -52
+E         +6
+
+test_sample1.py:13: AssertionError</failure></testcase><testcase classname="test_sample1" file="test_sample1.py" line="19" name="test_answer" time="0.001"><failure message="assert 4 == 5
+  -4
+  +5">def test_answer():
+&gt;       assert func(3) == 5
+E       assert 4 == 5
+E         -4
+E         +5
+
+test_sample1.py:21: AssertionError</failure></testcase></testsuite>
