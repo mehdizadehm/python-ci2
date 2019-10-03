@@ -18,6 +18,6 @@ def func(x):
 
 
 def test_answer():
-    echo "Test started..."
+    echo "Test started.."
     assert func(3) == 5
     
