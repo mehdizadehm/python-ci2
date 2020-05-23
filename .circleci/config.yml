@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Circile CI Test starting..."
-      - run: python -m pytest
+      - run: python -m unittest tests/test_sample1.py
       - store_test_results:
           path: /tmp/test-results
       - attach_workspace:
