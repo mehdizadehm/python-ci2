@@ -20,6 +20,8 @@ jobs:
       - checkout
       - run: echo "Circile CI Test starting..."
       - run: python -m pytest
+      - store_test_results:
+          path: test-results
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: my_workspace
