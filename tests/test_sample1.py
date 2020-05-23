@@ -20,5 +20,5 @@ def func(x):
 
 def test_answer():
     echo "Test started.."
-    assert func(4) == 5
+    assert func(4) == 5, "answer test failed"
     
