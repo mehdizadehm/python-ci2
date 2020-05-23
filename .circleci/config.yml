@@ -3,9 +3,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
-      - run:
-          name: "Set Python Version"
-          command: pyenv global 3.7.0
       - checkout
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
@@ -22,7 +19,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Circile CI Test starting..."
-      - run: python -m unittest tests/test_sample1.py
+      - run: runTest.sh
       - store_test_results:
           path: /tmp/test-results
       - attach_workspace:
