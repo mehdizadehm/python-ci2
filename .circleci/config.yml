@@ -7,7 +7,6 @@ jobs:
       - run: echo "A first hello"
       - run: mkdir -p my_workspace
       - run: echo "Trying out workspaces" > my_workspace/echo-output
-      - run: python -m pytest
       - persist_to_workspace:
           # Must be an absolute path, or relative path from working_directory
           root: my_workspace
@@ -19,7 +18,8 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: echo "A more familiar hi"
+      - run: echo "Circile CI Test starting..."
+      - run: python -m pytest
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: my_workspace
