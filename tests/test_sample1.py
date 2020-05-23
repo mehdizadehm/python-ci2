@@ -4,7 +4,7 @@ def test_file1_method1():
     x=2
     x=5
     y=6
-    assert x+1 == y,"test failed"
+    # assert x+1 == y,"test failed"
     assert x == y,"test failed"
 
 
@@ -20,5 +20,5 @@ def func(x):
 
 def test_answer():
     echo "Test started.."
-    assert func(3) == 5
+    assert func(4) == 5
     
