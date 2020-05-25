@@ -10,7 +10,7 @@ jobs:
       - run: mkdir testdir
       - run: cd testdir
       - persist_to_workspace:
-          root: images
+          root: testdir
           paths:
             - "*"
   test:
