@@ -5,8 +5,8 @@ jobs:
     steps:
       # - checkout
       - run: echo "A first hello hi"
-      - run: mkdir -p my_workspace
-      - run: echo "Trying out workspaces" > my_workspace/echo-output
+      # - run: mkdir -p my_workspace
+      # - run: echo "Trying out workspaces" > my_workspace/echo-output
       - run: cd 
       - run: mkdir testdir
       - run: cd testdir
