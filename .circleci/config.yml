@@ -10,11 +10,9 @@ jobs:
       - run: mkdir testdir
       - run: cd testdir
       - persist_to_workspace:
-          # Must be an absolute path, or relative path from working_directory
-          root: my_workspace
-          # Must be relative path from root
+          root: images
           paths:
-            - echo-output  
+            - "*"
   test:
     docker:
       - image: circleci/ruby:2.4.1
