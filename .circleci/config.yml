@@ -15,7 +15,8 @@ jobs:
             cd testdir
             pwd
       - persist_to_workspace:
-          root: testdir
+          paths:
+            - "*"
   test:
     docker:
       - image: circleci/ruby:2.4.1
