@@ -21,7 +21,11 @@ jobs:
       # - checkout
       - run: echo "Circile CI Test starting..."
       - run: pwd
-      - run: cd testdir
+      command: |
+            cd
+            cd testdir
+            pwd
+      # - run: cd testdir
       - run: ./runTest.sh
       - store_test_results:
           path: /tmp/test-results
