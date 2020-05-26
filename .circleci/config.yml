@@ -15,7 +15,7 @@ jobs:
             cd testdir
             pwd
       - persist_to_workspace:
-          root: project
+          root: /home/circleci
           paths:
             - "*"
   test:
