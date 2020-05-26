@@ -20,7 +20,7 @@ jobs:
       - persist_to_workspace:
           root: /home/circleci
           paths:
-            - testdir1
+            - project
   test:
     docker:
       - image: circleci/ruby:2.4.1
