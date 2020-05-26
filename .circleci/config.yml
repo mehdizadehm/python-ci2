@@ -11,19 +11,22 @@ jobs:
           name: Creating new Diroectory
           command: |
             pwd
-            mkdir testdir
-            cd testdir
+            mkdir testdir1
+            cd testdir1
+            pwd
+            mkdir testdir2
+            cd testdir2
             pwd
       - persist_to_workspace:
           root: /home/circleci
           paths:
-            - "*"
+            - testdir1
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
       - attach_workspace:
-          at: project # /home/circleci/project
+          at: /home/circleci/testdir1
       # - checkout
       - run: echo "Circile CI Test starting..."
       - run: pwd
@@ -32,8 +35,9 @@ jobs:
           command: |
             pwd
             ls
-            cd testdir
+            cd testdir1
             pwd
+            ls
       # - run: cd testdir
       
 workflows:
