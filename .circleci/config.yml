@@ -15,10 +15,10 @@ jobs:
             mkdir testdir
             cd testdir
             pwd
-    - persist_to_workspace:
-        root: /home/circleci
-        paths:
-          - project
+      - persist_to_workspace:
+          root: /home/circleci
+          paths:
+            - project
   test:
     docker:
       - image: circleci/ruby:2.4.1
