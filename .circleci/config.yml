@@ -26,7 +26,7 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - attach_workspace:
-          at: /home/circleci/testdir1
+          at: /home/circleci/project
       # - checkout
       - run: echo "Circile CI Test starting..."
       - run: pwd
