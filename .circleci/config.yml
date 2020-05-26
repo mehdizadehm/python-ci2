@@ -11,7 +11,6 @@ jobs:
           name: Creating new Diroectory
           command: |
             pwd
-            cd
             mkdir testdir
             cd testdir
             pwd
@@ -30,7 +29,7 @@ jobs:
           name: Checking Folders
           command: |
             pwd
-            cd
+            ls
             cd testdir
             pwd
       # - run: cd testdir
