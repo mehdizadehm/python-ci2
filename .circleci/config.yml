@@ -15,15 +15,15 @@ jobs:
             cd testdir
             pwd
       - persist_to_workspace:
-          root: /home/circleci/project
+          root: project
           paths:
-            - testdir
+            - "*"
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
       - attach_workspace:
-          at: /home/circleci/project
+          at: project # /home/circleci/project
       # - checkout
       - run: echo "Circile CI Test starting..."
       - run: pwd
@@ -35,19 +35,7 @@ jobs:
             cd testdir
             pwd
       # - run: cd testdir
-      - run: ./runTest.sh
-      - store_test_results:
-          path: /tmp/test-results
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: my_workspace
-
-      - run: |
-          if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
-            echo "It worked!";
-          else
-            echo "Nope!"; exit 1
-          fi
+      
 workflows:
   version: 2
   build_and_test:
