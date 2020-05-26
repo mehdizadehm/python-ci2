@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Creating new Diroectory
           command: |
+            pwd
             cd
             mkdir testdir
             cd testdir
@@ -21,7 +22,10 @@ jobs:
       # - checkout
       - run: echo "Circile CI Test starting..."
       - run: pwd
-      command: |
+      - run:
+          name: Checking Folders
+          command: |
+            pwd
             cd
             cd testdir
             pwd
