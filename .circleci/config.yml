@@ -18,7 +18,7 @@ jobs:
             cd testdir2
             pwd
             echo "EnvVarTest"
-            echo $ENV1
+            echo $MY_ENV_VAR
   test:
     docker:
       - image: circleci/ruby:2.4.1
@@ -27,7 +27,7 @@ jobs:
           name: Creating new Diroectory
           command: |
             echo "EnvVarTest"
-            echo $ENV1
+            echo $MY_ENV_VAR
 
       
 workflows:
