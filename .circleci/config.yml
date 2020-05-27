@@ -19,30 +19,13 @@ jobs:
             pwd
             echo "EnvVarTest"
             echo $MY_ENV_VAR_1
-      - persist_to_workspace:
-          root: /home/circleci/project
-          paths:
-            - testdir1
   test:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
-      - attach_workspace:
-          at: /home/circleci/project
-      # - checkout
-      - run: echo "Circile CI Test starting..."
-      - run: pwd
-      - run:
-          name: Checking Folders
-          command: |
-            pwd
-            ls
-            cd testdir1
-            pwd
-            ls
             echo "EnvVarTest"
             echo $MY_ENV_VAR_1
-      # - run: cd testdir
+
       
 workflows:
   version: 2
