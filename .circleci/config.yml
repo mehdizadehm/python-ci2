@@ -44,7 +44,7 @@ jobs:
             pwd
             ls
             echo "EnvVarTest"
-            Echo $MY_ENV_VAR_1
+            echo $MY_ENV_VAR_1
       # - run: cd testdir
       
 workflows:
