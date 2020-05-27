@@ -2,9 +2,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1
-      environment:
-          MY_ENV_VAR_1: test_env_var
-          MY_ENV_VAR_2: my-value-2
+        environment:
+            MY_ENV_VAR_1: test_env_var
+            MY_ENV_VAR_2: my-value-2
     steps:
       # - checkout
       - run: echo "A first hello hi"
