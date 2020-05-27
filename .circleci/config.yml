@@ -2,6 +2,9 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.1
+      environment:
+          MY_ENV_VAR_1: test_env_var
+          MY_ENV_VAR_2: my-value-2
     steps:
       # - checkout
       - run: echo "A first hello hi"
@@ -17,6 +20,8 @@ jobs:
             mkdir testdir2
             cd testdir2
             pwd
+            echo "EnvVarTest"
+            echo $MY_ENV_VAR_1
       - persist_to_workspace:
           root: /home/circleci/project
           paths:
@@ -38,6 +43,8 @@ jobs:
             cd testdir1
             pwd
             ls
+            echo "EnvVarTest"
+            Echo $MY_ENV_VAR_1
       # - run: cd testdir
       
 workflows:
