@@ -19,7 +19,16 @@ jobs:
             pwd
             echo "EnvVarTest"
             echo $MY_ENV_VAR
-  test:
+  test1:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - run:
+          name: Creating new Diroectory
+          command: |
+            echo "EnvVarTest"
+            echo $MY_ENV_VAR
+  test2:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
@@ -36,6 +45,9 @@ workflows:
     jobs:
       - build:
           context: MyContext # has an env var called MY_ENV_VAR
-      - test:
+      - test1:
+          requires:
+            - build
+      - test2:
           requires:
             - build
