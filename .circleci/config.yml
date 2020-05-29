@@ -46,20 +46,13 @@ jobs:
             echo "EnvVarTest"
             echo $ENV_VAR
   test_win:
-    executor:
-      name: win/default
-      shell: powershell.exe
+    machine:
+      image: windows-default # Windows machine image
+    resource_class: windows.medium
     steps:
+      # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: systeminfo
-      - run:
-          name: "Check docker"
-          shell: powershell.exe
-          command: |
-            docker info
-            docker run hello-world:nanoserver-1809
-
-
+      - run: Write-Host 'Hello, Windows'
       
 workflows:
   version: 2
