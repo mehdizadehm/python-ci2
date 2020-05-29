@@ -2,52 +2,6 @@ version: 2.1
 
 jobs:
   build:
-    docker:  
-      - image: circleci/ruby:2.4.1
-    steps:
-      # - checkout
-      - run: echo "A first hello hi"
-      # -  run: mkdir -p my_workspace
-      # - run: echo "Trying out workspaces" > my_workspace/echo-output
-      - run:
-          name: Creating new Diroectory
-          command: |
-            pwd
-            mkdir testdir1
-            cd testdir1
-            pwd
-            mkdir testdir2
-            cd testdir2
-            pwd
-  test1:
-    docker:
-      - image: circleci/ruby:2.4.1
-    environment:
-      ENV_VAR: bar 
-    steps:
-      - run:
-          name: Reading env. var. 1
-          command: |
-            echo "EnvVarTest"
-            echo $ENV_VAR
-            echo "ENV1"
-            echo $ENV1
-            echo "FRTEST"
-            echo $FRTEST
-            mkdir $ENV1
-            cd $ENV1
-            pwd
-            mkdir $FRTEST
-            cd $FRTEST
-            pwd
-            echo $NEWVAR
-            
-      - run:
-          name: Reading env. var. 1
-          command: |
-            echo "EnvVarTest"
-            echo $ENV_VAR
-  test_win:
     machine:
       image: windows-default # Windows machine image
     resource_class: windows.medium
@@ -61,10 +15,4 @@ workflows:
   build_and_test:
     jobs:
       - build:
-          context: MyContext # has an env var called MY_ENV_VAR
-      - test1:
-          requires:
-            - build
-      - test_win:
-          requires:
-            - build
+
