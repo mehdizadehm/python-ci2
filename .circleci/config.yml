@@ -38,6 +38,12 @@ jobs:
             set PYTHONPATH=%PYTHONPATH%;%PYAPS_HOME%
             
             git clone https://github.com/insarlab/MintPy.git %MINTPY_HOME%
+            git clone https://github.com/yunjunz/pyaps3.git $PYAPS_HOME/pyaps3
+            
+            set PYTHON3DIR=~/tools/miniconda3
+            set PATH=%PATH}%;%PYTHON3DIR%/bin
+            
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
       
 
 workflows:
