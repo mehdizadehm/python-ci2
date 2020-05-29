@@ -33,7 +33,7 @@ jobs:
             set MINTPY_HOME=~/tools/MintPy
             set PYTHONPATH=%PYTHONPATH%;%MINTPY_HOME%  
             set PATH=%PATH%;$%MINTPY_HOME%/mintpy
-
+            testtesttesttesst
             set PYAPS_HOME=~/tools/PyAPS
             set PYTHONPATH=%PYTHONPATH%;%PYAPS_HOME%
             
