@@ -23,8 +23,8 @@ jobs:
       # Commands are run in a Windows
       # virtual machine environment
       - run:
-          shell: powershell.exe
           name: Setting Environment Variables
+          shell: cmd.exe
           command: |
             set ENV_VAR=value
             echo %ENV_VAR%
