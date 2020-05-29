@@ -30,6 +30,13 @@ jobs:
             echo %ENV_VAR%
             set NEW_ENV_VAR=%ENV_VAR%/testdir
             echo %NEW_ENV_VAR%
+            set MINTPY_HOME=~/tools/MintPy
+            set PYTHONPATH=%PYTHONPATH%;%MINTPY_HOME%  
+            set PATH=%PATH%;$%MINTPY_HOME%/mintpy
+
+##--------- PyAPS -------------------##
+export PYAPS_HOME=~/tools/PyAPS
+export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
       
 
 workflows:
