@@ -30,13 +30,13 @@ jobs:
             echo $ENV_VAR
             echo "ENV1"
             echo $ENV1
-            echo "MY_ENV_VAR_1"
-            echo $MY_ENV_VAR_1
+            echo "FRTEST"
+            echo $FRTEST
             mkdir $ENV1
             cd $ENV1
             pwd
-            mkdir $MY_ENV_VAR_1
-            cd $MY_ENV_VAR_1
+            mkdir $FRTEST
+            cd $FRTEST
             pwd
             
       - run:
