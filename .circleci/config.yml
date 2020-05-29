@@ -34,9 +34,8 @@ jobs:
             set PYTHONPATH=%PYTHONPATH%;%MINTPY_HOME%  
             set PATH=%PATH%;$%MINTPY_HOME%/mintpy
 
-##--------- PyAPS -------------------##
-export PYAPS_HOME=~/tools/PyAPS
-export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
+            set PYAPS_HOME=~/tools/PyAPS
+            set PYTHONPATH=%PYTHONPATH%;%PYAPS_HOME%
       
 
 workflows:
