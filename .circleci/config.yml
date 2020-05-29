@@ -36,6 +36,8 @@ jobs:
 
             set PYAPS_HOME=~/tools/PyAPS
             set PYTHONPATH=%PYTHONPATH%;%PYAPS_HOME%
+            
+            git clone https://github.com/insarlab/MintPy.git %MINTPY_HOME%
       
 
 workflows:
