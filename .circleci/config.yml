@@ -6,13 +6,13 @@ orbs:
 jobs:
   build1:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: dir
   test:
     docker:
-      - image: circleci/<language>:<version TAG>
+      - image: circleci/ruby:2.4.1
     steps:
       - checkout
       - run: dir
@@ -33,7 +33,7 @@ workflows:
     jobs:
       - build1:
           context: MyContext # has an env var called MY_ENV_VAR
-      - test1:
+      - test:
           requires:
             - build1
       - build2:
