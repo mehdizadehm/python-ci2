@@ -13,6 +13,7 @@ jobs:
       - checkout
       - run: dir
       - run: echo $MINTPY_HOME
+      - run: echo $PYTHONPATH
   test:
     docker:
       - image: circleci/ruby:2.4.1
