@@ -28,6 +28,10 @@ jobs:
           command: |
             echo "EnvVarTest"
             echo $ENV_VAR
+            echo "ENV1"
+            echo $ENV1
+            echo "MY_ENV_VAR_1"
+            echo $MY_ENV_VAR_1
       - run:
           name: Reading env. var. 1
           command: |
