@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run: dir
    
-   build2: # name of your job
+  build2: # name of your job
     executor: win/default # executor type
     steps:
       # Commands are run in a Windows
