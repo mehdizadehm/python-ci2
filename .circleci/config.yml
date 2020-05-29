@@ -1,21 +1,15 @@
-version: 2
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
 jobs:
-  build:
-    docker:
-      - image: circleci/<language>:<version TAG>
+  build: # name of your job
+    executor: win/default # executor type
+
     steps:
+      # Commands are run in a Windows
+      # virtual machine environment
       - checkout
-      - run: dir
-  test:
-    docker:
-      - image: circleci/<language>:<version TAG>
-    steps:
-      - checkout
-      - run: dir
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+      - run: Write-Host 'Hello, Windows'
 
