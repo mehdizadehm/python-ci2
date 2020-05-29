@@ -32,6 +32,13 @@ jobs:
             echo $ENV1
             echo "MY_ENV_VAR_1"
             echo $MY_ENV_VAR_1
+            mkdir $ENV1
+            cd $ENV1
+            pwd
+            mkdir $MY_ENV_VAR_1
+            cd $MY_ENV_VAR_1
+            pwd
+            
       - run:
           name: Reading env. var. 1
           command: |
