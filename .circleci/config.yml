@@ -38,6 +38,7 @@ jobs:
             mkdir $FRTEST
             cd $FRTEST
             pwd
+            echo $NEWVAR
             
       - run:
           name: Reading env. var. 1
