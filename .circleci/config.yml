@@ -45,17 +45,26 @@ jobs:
           command: |
             echo "EnvVarTest"
             echo $ENV_VAR
-  test2:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
+  test_macos: # runs not using `Workflows` must have a `build` job as entry point
+    macos:  # indicate that we are using the macOS executor
+      xcode: 11.3.0 # indicate our selected version of Xcode
+    steps: # a series of commands to run
+      - checkout  # pull down code from your version control system.
       - run:
-          name: Creating new Diroectory
-          command: |
-            echo "EnvVarTest"
-            echo $MY_ENV_VAR
-            echo $ENV1
-            echo $MY_ENV_VAR_1
+          # run our tests using xcode's cli tool `xcodebuild`
+          name: Run Unit Tests
+          command: xcodebuild test -scheme circleci-demo-macos
+      - run:
+          # build our application
+          name: Build Application
+          command: xcodebuild
+      - run:
+          # compress Xcode's build output so that it can be stored as an artifact
+          name: Compress app for storage
+          command: zip -r app.zip build/Release/circleci-demo-macos.app
+      - store_artifacts: # store this build output. Read more: https://circleci.com/docs/2.0/artifacts/
+          path: app.zip
+          destination: app
 
       
 workflows:
@@ -67,6 +76,6 @@ workflows:
       - test1:
           requires:
             - build
-      - test2:
+      - test_macos:
           requires:
             - build
