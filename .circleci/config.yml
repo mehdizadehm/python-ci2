@@ -1,18 +1,21 @@
-version: 2.1
-
+version: 2
 jobs:
   build:
-    machine:
-      image: windows-default # Windows machine image
-    resource_class: windows.medium
+    docker:
+      - image: circleci/<language>:<version TAG>
     steps:
-      # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: Write-Host 'Hello, Windows'
-      
+      - run: dir
+  test:
+    docker:
+      - image: circleci/<language>:<version TAG>
+    steps:
+      - checkout
+      - run: dir
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build:
+      - build
+      - test
 
