@@ -17,8 +17,6 @@ jobs:
             mkdir testdir2
             cd testdir2
             pwd
-            echo "EnvVarTest"
-            echo $MY_ENV_VAR
   test1:
     docker:
       - image: circleci/ruby:2.4.1
@@ -30,7 +28,6 @@ jobs:
           command: |
             echo "EnvVarTest"
             echo $ENV_VAR
-    steps:
       - run:
           name: Reading env. var. 1
           command: |
