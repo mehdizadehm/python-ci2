@@ -7,9 +7,12 @@ jobs:
   build1:
     docker:
       - image: circleci/ruby:2.4.1
+    environment:
+      MINTPY_HOME: ~/tools/MintPy
     steps:
       - checkout
       - run: dir
+      - run: echo $MINTPY_HOME
   test:
     docker:
       - image: circleci/ruby:2.4.1
