@@ -43,8 +43,10 @@ jobs:
             set PYTHON3DIR=~/tools/miniconda3
             set PATH=%PATH}%;%PYTHON3DIR%/bin
             
-            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-      
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+            
+            start /wait "" Miniconda3-latest-Windows-x86_64.exe /S /D=%PYTHON3DIR%
+
 
 workflows:
   version: 2
