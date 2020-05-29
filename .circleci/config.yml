@@ -17,13 +17,19 @@ jobs:
       - checkout
       - run: dir
    
-  build2: # name of your job
+  test_win_conda: # name of your job
     executor: win/default # executor type
     steps:
       # Commands are run in a Windows
       # virtual machine environment
-      - checkout
-      - run: Write-Host 'Hello, Windows'
+      - run:
+          name: Setting Environment Variables
+          command: |
+            set ENV_VAR=value
+            echo %ENV_VAR%
+            set NEW_ENV_VAR=%ENV_VAR%/testdir
+            echo %NEW_ENV_VAR%
+      
 
 workflows:
   version: 2
@@ -34,7 +40,7 @@ workflows:
       - test:
           requires:
             - build1
-      - build2:
+      - test_win_conda:
           requires:
             - build1        
 
