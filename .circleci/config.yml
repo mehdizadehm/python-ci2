@@ -22,12 +22,20 @@ jobs:
   test1:
     docker:
       - image: circleci/ruby:2.4.1
+    environment:
+      ENV_VAR: bar 
     steps:
       - run:
-          name: Creating new Diroectory
+          name: Reading env. var. 1
           command: |
             echo "EnvVarTest"
-            echo $MY_ENV_VAR
+            echo $ENV_VAR
+    steps:
+      - run:
+          name: Reading env. var. 1
+          command: |
+            echo "EnvVarTest"
+            echo $ENV_VAR
   test2:
     docker:
       - image: circleci/ruby:2.4.1
