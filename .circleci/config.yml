@@ -11,7 +11,7 @@ jobs:
       - run: dir
       - run: echo $MINTPY_HOME
       - run: echo $PYTHONPATH
-      - run: echo "to test pull request"
+      - run: echo " to test pull request"
   test:
     docker:
       - image: circleci/ruby:2.4.1
