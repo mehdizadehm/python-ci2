@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  win: circleci/windows@2.2.0
-
 jobs:
   build1:
     docker:
@@ -21,36 +18,6 @@ jobs:
       - checkout
       - run: dir
    
-  test_win_conda: # name of your job
-    executor: win/default # executor type
-    steps:
-      # Commands are run in a Windows
-      # virtual machine environment
-      - run:
-          name: Setting Environment Variables
-          command: |
-            set ENV_VAR=value
-            echo %ENV_VAR%
-            set NEW_ENV_VAR=%ENV_VAR%/testdir
-            echo %NEW_ENV_VAR%
-            set MINTPY_HOME=~/tools/MintPy
-            set PYTHONPATH=%PYTHONPATH%;%MINTPY_HOME%  
-            set PATH=%PATH%;$%MINTPY_HOME%/mintpy
-            testtesttesttesst
-            set PYAPS_HOME=~/tools/PyAPS
-            set PYTHONPATH=%PYTHONPATH%;%PYAPS_HOME%
-            
-            git clone https://github.com/insarlab/MintPy.git %MINTPY_HOME%
-            git clone https://github.com/yunjunz/pyaps3.git $PYAPS_HOME/pyaps3
-            
-            set PYTHON3DIR=~/tools/miniconda3
-            set PATH=%PATH%;%PYTHON3DIR%/bin
-            
-            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
-            
-            start /wait "" Miniconda3-latest-Windows-x86_64.exe /S /D=%PYTHON3DIR%
-
-
 workflows:
   version: 2
   build_and_test:
@@ -60,8 +27,5 @@ workflows:
       - test:
           requires:
             - build1
-      - test_win_conda:
-          requires:
-            - build1        
-
+      
  
