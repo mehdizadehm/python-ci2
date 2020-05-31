@@ -1,32 +1,52 @@
 version: 2.1
-
-jobs:
-  build1:
-    docker:
-      - image: circleci/ruby:2.4.1
-    environment:
-      MINTPY_HOME: ~/tools/MintPy
-    steps:
-      - checkout
-      - run: dir
-      - run: echo $MINTPY_HOME
-      - run: echo $PYTHONPATH
-      - run: echo " to test pull request"
-  test:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: dir
-   
-workflows:
-  version: 2
-  build_and_test:
+    executors:
+      docker-publisher:
+        environment:
+          IMAGE_NAME: jonathancardoso/building-on-ci
+        docker:
+          - image: circleci/buildpack-deps:stretch
     jobs:
-      - build1:
-          context: MyContext # has an env var called MY_ENV_VAR
-      - test:
-          requires:
-            - build1
-      
- 
+      build:
+        executor: docker-publisher
+        steps:
+          - checkout
+          - setup_remote_docker
+          - run:
+              name: Build Docker image
+              command: |
+                docker build -t $IMAGE_NAME:latest .
+          - run:
+              name: Archive Docker image
+              command: docker save -o image.tar $IMAGE_NAME
+          - persist_to_workspace:
+              root: .
+              paths:
+                - ./image.tar
+      publish-latest:
+        executor: docker-publisher
+        steps:
+          - attach_workspace:
+              at: /tmp/workspace
+          - setup_remote_docker
+          - run:
+              name: Load archived Docker image
+              command: docker load -i /tmp/workspace/image.tar
+          - run:
+              name: Publish Docker Image to Docker Hub
+              command: |
+                echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+                docker push $IMAGE_NAME:latest
+    workflows:
+      version: 2
+      build-master:
+        jobs:
+          - build:
+              filters:
+                branches:
+                  only: master
+          - publish-latest:
+              requires:
+                - build
+              filters:
+                branches:
+                  only: master
