@@ -1,7 +1,9 @@
 version: 2.1
 orbs:
-  docker-publish: dockermiami/testrepo:testtag
+  docker-publish: circleci/docker-publish@1.0.0
 workflows:
   build_and_publish_docker_image:
     jobs:
-      - docker-publish/publish
+      - docker-publish/publish:
+          image: dockermiami/testrepo
+          tag: testtag
