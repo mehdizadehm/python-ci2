@@ -1,7 +1,8 @@
 jobs:
   build:
     docker:
-      - image: docker:stable-git
+      - image: ubuntu:bionic
+        user: root
     steps:
       - run:
           name: Setting Environment Variables
@@ -16,7 +17,7 @@ jobs:
       - run:
           name: Install Docker
           command: |
-            yum install docker-compose awscli
+            apt-get install docker-compose awscli
       - run:
           name: Build docker image
           command: |
