@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Install Docker
           command: |
-            sudo apt-get install docker-compose awscli
+            apt-get install -y docker-compose awscli
       - run:
           name: Build docker image
           command: |
