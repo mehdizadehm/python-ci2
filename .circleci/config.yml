@@ -5,5 +5,5 @@ workflows:
   build_and_publish_docker_image:
     jobs:
       - docker-publish/publish:
-          image: dockermiami/testrepo
+          image: dockermiami/testrepos
           tag: testtag
