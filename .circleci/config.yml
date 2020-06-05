@@ -1,7 +1,7 @@
 jobs:
   build:
     docker:
-      - image: dockermiami/debianimage:latest
+      - image: ubuntu:bionic
         user: root
     steps:
       - run:
