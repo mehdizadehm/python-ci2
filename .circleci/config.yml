@@ -12,6 +12,7 @@ jobs:
             cd /home
             ls
             echo "END"
+      - setup_remote_docker
       - run:
           name: Build docker image
           command: |
@@ -32,7 +33,6 @@ jobs:
       - image: dockermiami/debianimage:latest
         user: root
     steps:
-      - setup_remote_docker
       - run:
           name: Installing Dependencies via Conda
           command: |
