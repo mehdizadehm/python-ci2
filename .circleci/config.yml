@@ -12,6 +12,9 @@ jobs:
             cd /home
             ls
             echo $MY_ENV_VAR
+            mkdir $MY_ENV_VAR
+            cd $MY_ENV_VAR
+            pwd
             echo "END"
       
   test_linux_conda:
