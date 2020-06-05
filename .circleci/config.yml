@@ -32,6 +32,7 @@ jobs:
       - image: dockermiami/debianimage:latest
         user: root
     steps:
+      - setup_remote_docker
       - run:
           name: Installing Dependencies via Conda
           command: |
