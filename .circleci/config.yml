@@ -1,8 +1,7 @@
 jobs:
   build:
     docker:
-      - image: ubuntu:bionic
-        user: root
+      - image: docker:stable-git
     steps:
       - run:
           name: Setting Environment Variables
