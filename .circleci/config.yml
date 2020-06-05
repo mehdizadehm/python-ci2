@@ -12,6 +12,20 @@ jobs:
             cd /home
             ls
             echo "END"
+      - run:
+          name: Build docker image
+          command: |
+            mkdir images
+            SHA1=$(echo $CIRCLE_SHA1 | cut -c1-7)
+            echo "export TAG=$SHA1" >> images/env.sh
+            source images/env.sh
+            docker build --rm --force-rm -t dockermiami/debianimage:$TAG -f docker/Dockerfile .
+            cd images
+            docker save dockermiami/debianimage:$TAG > isce2.tar
+      - persist_to_workspace:
+          root: images
+          paths:
+            - "*"
 
   test_linux_conda:
     docker:
