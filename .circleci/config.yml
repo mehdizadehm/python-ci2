@@ -14,11 +14,6 @@ jobs:
             echo "END"
       - setup_remote_docker
       - run:
-          name: Install dependencies
-          command: |
-            pip install \
-              docker-compose awscli
-      - run:
           name: Build docker image
           command: |
             mkdir images
