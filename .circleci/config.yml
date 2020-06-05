@@ -14,10 +14,9 @@ jobs:
       
       - setup_remote_docker
       - run:
-          name: Install dependencies
+          name: Install Docker
           command: |
-            pip install \
-              docker-compose awscli
+            apt-get install docker-compose awscli
       - run:
           name: Build docker image
           command: |
