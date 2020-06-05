@@ -9,7 +9,7 @@ jobs:
           command: |
             pwd
             ls
-            cd home
+            cd /home
             ls
             echo "END"
 
