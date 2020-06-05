@@ -9,13 +9,10 @@ jobs:
           command: |
             pwd
             ls
+            cd home
+            ls
             echo "END"
-      
-      - persist_to_workspace:
-          root: /root
-          paths:
-            - tools
-            
+
   test_linux_conda:
     docker:
       - image: dockermiami/debianimage:latest
