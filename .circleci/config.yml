@@ -10,18 +10,18 @@ jobs:
           name: Setting Environment Variables
           command: |
             pwd
-            echo $MINTPY_HOME
+            echo ${MINTPY_HOME}
             echo "1"
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}
             export PATH=${PATH}:${MINTPY_HOME}/mintpy
             export PYAPS_HOME=~/tools/PyAPS
             export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
             echo "PythonPath"
-            echo $PYTHONPATH
+            echo ${PYTHONPATH}
             echo "Path"
-            echo $PATH
+            echo ${PATH}
             echo "PaAps_Home"
-            echo $PYAPS_HOME
+            echo ${PYAPS_HOME}
             echo "END"
       
   test_linux_conda:
