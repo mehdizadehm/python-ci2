@@ -3,6 +3,8 @@ jobs:
     docker:
       - image: ubuntu:bionic
         user: root
+    environment:
+      - BASH_ENV: /etc/profile 
     steps:
       - run:
           name: Setting Environment Variables
@@ -11,9 +13,9 @@ jobs:
             ls
             cd /home
             ls
-            echo $MY_ENV_VAR
-            mkdir $MY_ENV_VAR
-            cd $MY_ENV_VAR
+            echo $BASH_ENV
+            mkdir $BASH_ENV
+            cd $BASH_ENV
             pwd
             echo "END"
       
