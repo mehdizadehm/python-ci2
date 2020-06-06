@@ -24,22 +24,10 @@ jobs:
             echo ${PYAPS_HOME}
             echo "END"
       
-  test_linux_conda:
-    docker:
-      - image: dockermiami/debianimage:latest
-        user: root
-    steps:
-      - run:
-          name: Installing Dependencies via Conda
-          command: |
-            pwd
-            ls
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - test_linux_conda:
-          requires:
-            - build
+
