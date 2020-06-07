@@ -23,7 +23,7 @@ jobs:
           name: Installing MintPy and PyAPS
           command: |
             # setup environment variable
-            export MINTPY_HOME=${HOME}/tools/MintPy
+            # export MINTPY_HOME=${HOME}/tools/MintPy
             export PYAPS_HOME=${HOME}/tools/PyAPS
             export CONDA_PREFIX=${HOME}/tools/miniconda3
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
@@ -42,7 +42,7 @@ jobs:
       - run:
           name: Testing MintPy on Example Datasets
           command: |
-            export MINTPY_HOME=${HOME}/tools/MintPy
+            # export MINTPY_HOME=${HOME}/tools/MintPy
             export PYAPS_HOME=${HOME}/tools/PyAPS
             export CONDA_PREFIX=${HOME}/tools/miniconda3
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
