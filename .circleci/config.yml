@@ -3,6 +3,10 @@ jobs:
   build:
     docker:
       - image: ubuntu:bionic
+        environment:
+          PYAPS_HOME: /root/tools/PyAPS
+          CONDA_PREFIX: /root/tools/miniconda3
+          MINTPY_HOME: /root/tools/MintPy
         user: root
 
     steps:
@@ -14,8 +18,6 @@ jobs:
             apt-get update --yes && apt-get upgrade --yes
             apt-get install --yes git wget
             # download and install miniconda3
-            mkdir -p ${HOME}/tools
-            cd ${HOME}/tools
             wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
             chmod +x Miniconda3-latest-Linux-x86_64.sh
             ./Miniconda3-latest-Linux-x86_64.sh -b -p ${HOME}/tools/miniconda3
@@ -23,9 +25,6 @@ jobs:
           name: Installing MintPy and PyAPS
           command: |
             # setup environment variable
-            # export MINTPY_HOME=${HOME}/tools/MintPy
-            export PYAPS_HOME=${HOME}/tools/PyAPS
-            export CONDA_PREFIX=${HOME}/tools/miniconda3
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
             export PATH=${MINTPY_HOME}/mintpy:${CONDA_PREFIX}/bin:${PATH}
             # download source code
@@ -42,11 +41,6 @@ jobs:
       - run:
           name: Testing MintPy on Example Datasets
           command: |
-            # export MINTPY_HOME=${HOME}/tools/MintPy
-            # cd $MINTPY_HOME
-            pwd
-            export PYAPS_HOME=${HOME}/tools/PyAPS
-            export CONDA_PREFIX=${HOME}/tools/miniconda3
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
             export PATH=${MINTPY_HOME}/mintpy:${CONDA_PREFIX}/bin:${PATH}
             mkdir -p ${HOME}/data
