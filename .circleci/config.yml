@@ -42,8 +42,8 @@ jobs:
       - run:
           name: Testing MintPy on Example Datasets
           command: |
-            export MINTPY_HOME=${HOME}/tools/MintPy
-            cd $MINTPY_HOME
+            # export MINTPY_HOME=${HOME}/tools/MintPy
+            # cd $MINTPY_HOME
             pwd
             export PYAPS_HOME=${HOME}/tools/PyAPS
             export CONDA_PREFIX=${HOME}/tools/miniconda3
