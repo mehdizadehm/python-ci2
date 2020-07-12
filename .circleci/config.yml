@@ -23,7 +23,7 @@ jobs:
             ./Miniconda3-latest-Linux-x86_64.sh -b -p ${HOME}/tools/miniconda3
       - run:
           name: Installing MintPy and PyAPS
-          command: |
+          command: | 
             # setup environment variable
             export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
             export PATH=${MINTPY_HOME}/mintpy:${CONDA_PREFIX}/bin:${PATH}
