@@ -13,6 +13,8 @@ jobs:
       - checkout
       - run:
           name: Setting Environment with Miniconda
+          command: |
+            ls
           
 workflows:
   version: 2
