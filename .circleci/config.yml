@@ -15,6 +15,7 @@ jobs:
           name: Setting Environment with Miniconda
           command: |
             ls
+            pwd
        
 workflows: 
   version: 2
