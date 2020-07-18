@@ -17,6 +17,10 @@ jobs:
             ls
             pwd
             echo $CIRCLE_WORKING_DIRECTORY
+            cd
+            ls
+            pwd
+            
        
 workflows: 
   version: 2
