@@ -10,6 +10,7 @@ jobs:
         user: root
 
     steps:
+      - run: apt-get update -y && apt-get install openssh-client git
       - checkout
       - run:
           name: Setting Environment with Miniconda
