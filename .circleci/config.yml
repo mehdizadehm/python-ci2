@@ -14,8 +14,8 @@ jobs:
       - run:
           name: Setting Environment with Miniconda
           command: |
-            lshaha
-          
+            ls 
+       
 workflows: 
   version: 2
   build_and_test:
