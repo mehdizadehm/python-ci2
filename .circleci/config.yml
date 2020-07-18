@@ -20,6 +20,8 @@ jobs:
             cd
             ls
             pwd
+            cd /root
+            ls
             
        
 workflows: 
