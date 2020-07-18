@@ -10,7 +10,12 @@ jobs:
         user: root
 
     steps:
-      - run: apt-get update -y && apt-get install openssh-client git
+      - run:
+          name: Setting Environment with Miniconda
+          command: |
+            apt update
+            apt-get update --yes && apt-get upgrade --yes
+            apt-get install --yes git wget
       - checkout
       - run:
           name: Setting Environment with Miniconda
