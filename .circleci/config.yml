@@ -20,6 +20,8 @@ jobs:
           name: DIR
           command: |
             ls
+            mkdir meissam
+            ls
             
       - checkout
       - run:
@@ -28,6 +30,7 @@ jobs:
             ls
             pwd
             echo $CIRCLE_WORKING_DIRECTORY
+            ls meissam
        
 workflows: 
   version: 2
