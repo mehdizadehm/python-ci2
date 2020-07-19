@@ -30,6 +30,7 @@ jobs:
             ls
             pwd
             echo $CIRCLE_WORKING_DIRECTORY
+            python --version
             
 
        
