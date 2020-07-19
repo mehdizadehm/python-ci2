@@ -10,7 +10,7 @@ jobs:
           CIRCLE_WORKING_DIRECTORY: ~/project/meissam
           
         user: root
-    
+    working_directory: ~/project/meissam
     steps:
       - run:
           name: Setting Environment with Miniconda
