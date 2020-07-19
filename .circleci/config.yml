@@ -22,9 +22,7 @@ jobs:
           name: DIR
           command: |
             ls
-            mkdir meissam
-            ls
-      
+            
       - checkout
       - run:
           name: Setting Environment with Miniconda
