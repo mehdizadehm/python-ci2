@@ -7,15 +7,31 @@ jobs:
           PYAPS_HOME: /root/tools/PyAPS
           CONDA_PREFIX: /root/tools/miniconda3
           MINTPY_HOME: /root/tools/MintPy
+          CIRCLE_WORKING_DIRECTORY: ~/project/meissam
+          
         user: root
-
+    
     steps:
+      - run:
+          name: Setting Environment with Miniconda
+          command: |
+            apt update
+            apt-get update --yes && apt-get upgrade --yes
+            apt-get install --yes git wget
+      - run:
+          name: DIR
+          command: |
+            ls
+            
       - checkout
       - run:
           name: Setting Environment with Miniconda
           command: |
             ls
-            echo "this a is new comment from forked repo"
+            pwd
+            echo $CIRCLE_WORKING_DIRECTORY
+            
+
        
 workflows: 
   version: 2
