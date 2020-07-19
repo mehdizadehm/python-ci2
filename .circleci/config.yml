@@ -2,7 +2,7 @@ version: 2.1
 jobs: 
   build:
     docker:
-      - image: ubuntu:bionic
+      - image: circleci/python:3.6.4 
         environment:
           PYAPS_HOME: /root/tools/PyAPS
           CONDA_PREFIX: /root/tools/miniconda3
