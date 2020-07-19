@@ -31,4 +31,5 @@ class TestStringMethods(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    print ('This is a message from real fork repo!!!')
     unittest.main()
