@@ -15,6 +15,7 @@ jobs:
           name: Setting Environment with Miniconda
           command: |
             ls
+            echo "this a is new comment from forked repo"
        
 workflows: 
   version: 2
