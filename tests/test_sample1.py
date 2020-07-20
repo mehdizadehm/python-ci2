@@ -4,7 +4,7 @@ import unittest
 class TestStringMethods(unittest.TestCase):
 
     def test_upper(self):
-        print ('this is a message from fork repo!')
+        print ('this is the 2nd message from fork repo!')
         self.assertEqual('foo'.upper(), 'FOO')
 
     def test_isupper(self):
