@@ -28,6 +28,7 @@ jobs:
             ls
             pwd
             echo $CIRCLE_WORKING_DIRECTORY
+            echo $working_directory
             python --version
             ./runTest.sh
             
