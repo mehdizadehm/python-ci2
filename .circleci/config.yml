@@ -7,9 +7,9 @@ jobs:
           PYAPS_HOME: /root/tools/PyAPS
           CONDA_PREFIX: /root/tools/miniconda3
           MINTPY_HOME: /root/tools/MintPy
+          CIRCLE_WORKING_DIRECTORY: /root/tools/MintPy
                     
         user: root
-    working_directory: ~/project/meissam
     steps:
       - run:
           name: Setting Environment with Miniconda
