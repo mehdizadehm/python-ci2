@@ -9,7 +9,7 @@ jobs:
           MINTPY_HOME: /root/tools/MintPy
                     
         user: root
-    working_directory: ~/project/meissam
+    WORKING_DIRECTORY: ~/project/meissam
     steps:
       - run:
           name: Setting Environment with Miniconda
