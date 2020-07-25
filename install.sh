@@ -40,9 +40,9 @@ conda install --yes --file $MINTPY_HOME/docs/conda.txt
 pip install git+https://github.com/tylere/pykml.git
 
 # install dependencies with conda
-$CONDA_PREFIX/bin/conda config --add channels conda-forge
-$CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt
-$CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git
+# $CONDA_PREFIX/bin/conda config --add channels conda-forge
+# $CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt
+# $CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git
 
 # test installation
 python -c "import mintpy; print(mintpy.version.description)"
