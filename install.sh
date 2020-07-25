@@ -6,7 +6,7 @@ if [ -z ${PYTHONPATH+x} ]; then export PYTHONPATH=""; fi
 export MINTPY_HOME=~/tools/MintPy
 export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}
 export PATH=${PATH}:${MINTPY_HOME}/mintpy
-export CONDA_PREFIX= ~/root/tools/miniconda3
+export CONDA_PREFIX=~/tools/miniconda3
 
 ##--------- PyAPS -------------------##
 export PYAPS_HOME=~/tools/PyAPS
