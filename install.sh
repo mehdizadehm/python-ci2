@@ -6,6 +6,7 @@ if [ -z ${PYTHONPATH+x} ]; then export PYTHONPATH=""; fi
 export MINTPY_HOME=~/tools/MintPy
 export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}
 export PATH=${PATH}:${MINTPY_HOME}/mintpy
+export CONDA_PREFIX= ~/root/tools/miniconda3
 
 ##--------- PyAPS -------------------##
 export PYAPS_HOME=~/tools/PyAPS
@@ -37,6 +38,11 @@ git clone https://github.com/yunjunz/pyaps3.git $PYAPS_HOME/pyaps3
 conda config --add channels conda-forge
 conda install --yes --file $MINTPY_HOME/docs/conda.txt
 pip install git+https://github.com/tylere/pykml.git
+
+# install dependencies with conda
+$CONDA_PREFIX/bin/conda config --add channels conda-forge
+$CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt
+$CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git
 
 # test installation
 python -c "import mintpy; print(mintpy.version.description)"
