@@ -16,7 +16,17 @@ export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
 ## update packages, install git and wget
 apt update
 apt-get update --yes && apt-get upgrade --yes
-apt-get install --yes git wget
+# apt-get install --yes git wget
+
+if ! command -v git &> /dev/null
+then
+    apt-get install --yes git wget
+fi
+
+if ! command -v wget &> /dev/null
+then
+    apt-get install --yes git wget
+fi
 
 # download source code MintPy and 
 git clone https://github.com/insarlab/MintPy.git $MINTPY_HOME
