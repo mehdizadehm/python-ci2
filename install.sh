@@ -59,3 +59,16 @@ python -c "import mintpy; print(mintpy.version.description)"
 smallbaselineApp.py -h
 tropo_pyaps3.py -h
 
+{ # try
+
+    python -c "import mintpy; print(mintpy.version.description)" &&
+    smallbaselineApp.py -h &&
+    tropo_pyaps3.py -h
+    
+    #save your output
+    echo "MitPy was installed successfully!"
+
+} || { # catch
+    # save log for exception 
+    echo "Installation could not be completed!"
+}
