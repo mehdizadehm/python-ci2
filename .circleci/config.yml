@@ -1,9 +1,8 @@
 version: 2.1
 jobs:
   build:
-    docker:
-      - image: ubuntu:bionic
-        user: root
+    macos:  # indicate that we are using the macOS executor
+      xcode: 11.3.0 # indicate our selected version of Xcode
     steps:
       - checkout
       - run:
