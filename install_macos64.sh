@@ -2,9 +2,7 @@
 LOG_FILE="log.txt"
 OS=MacOS64
 MINICONDA_FILENAME=Miniconda3-latest-MacOSX-x86_64.sh
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
+
 > ${LOG_FILE} 
 
 # check arguments. if log is given as arg. execution output should be visible while running, otherwise output should be saved in log.txt
@@ -30,7 +28,7 @@ process_start()
 process_exit()
 {
     echo  | tee /dev/fd/3 
-    echo "${RED}ERROR${NC}" 1>&3
+    echo "ERROR" 1>&3
     echo "Read the log file for more details, log.txt" 1>&3
     echo "You may use the README to install MintPy manually." | tee /dev/fd/3
     echo "If MintPy is already installed on your machine, please uninstall/remove it before installing the new version." | tee /dev/fd/3
@@ -41,7 +39,7 @@ process_exit()
 process_completed()
 {
     echo  | tee /dev/fd/3 
-    echo "${GREEN}MintPy is installed successfully.${NC}" | tee /dev/fd/3
+    echo "MintPy is installed successfully." | tee /dev/fd/3
     echo "For more details about installation steps please read the log.txt" 1>&3
     echo  | tee /dev/fd/3 
 }
@@ -88,7 +86,7 @@ fi
 
 } || { # catch
     # save log for exception 
-    echo "${RED}Could not download Mintpy!${NC}" | tee /dev/fd/3
+    echo "Could not download Mintpy!" | tee /dev/fd/3
     process_exit
 }
 
@@ -106,7 +104,7 @@ cd ${HOME}/tools
 
 } || { # catch
     # save log for exception 
-    echo "${RED}Could not download Miniconda!${NC}" | tee /dev/fd/3
+    echo "Could not download Miniconda!" | tee /dev/fd/3
     process_exit
 }
 
@@ -123,7 +121,7 @@ echo  | tee /dev/fd/3
 
 } || { # catch
     # save log for exception 
-    echo "${RED}Miniconda Installation failed!" | tee /dev/fd/3
+    echo "Miniconda Installation failed!" | tee /dev/fd/3
     process_exit
 }
 
@@ -142,7 +140,7 @@ export PATH=${MINTPY_HOME}/mintpy:${CONDA_PREFIX}/bin:${PATH}
 
 } || { # catch
     # save log for exception 
-    echo "${RED}Could not download PyAPS!${NC}" | tee /dev/fd/3
+    echo "Could not download PyAPS!" | tee /dev/fd/3
     process_exit
 }
 
@@ -165,7 +163,7 @@ echo  | tee /dev/fd/3
 
 } || { # catch
     # save log for exception 
-    echo "${RED}Dependencies couldn't be installed!" | tee /dev/fd/3
+    echo "Dependencies couldn't be installed!" | tee /dev/fd/3
     process_exit
 }
 
