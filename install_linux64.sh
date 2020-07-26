@@ -3,11 +3,13 @@ LOG_FILE="log.txt"
 OS=Linux64
 MINICONDA_FILENAME=Miniconda3-latest-Linux-x86_64.sh
 RED='\033[0;31m'
+GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 > ${LOG_FILE} 
 
 # check arguments. if log is given as arg. excution output should be visible while running, otherwise output should be saved in log.txt
-if [ $1 eq log ];then
+if [ $1 eq log ]
+then
     exec 3>&1 
 else
     exec 3>&1 1>>${LOG_FILE} 2>&1
@@ -39,7 +41,7 @@ process_exit()
 process_completed()
 {
     echo  | tee /dev/fd/3 
-    echo "MintPy is installed successfully!" | tee /dev/fd/3
+    echo "${GREEN}MintPy is installed successfully.${NC}" | tee /dev/fd/3
     echo "For more detials about installtion steps please read the log.txt" 1>&3
     echo  | tee /dev/fd/3 
 }

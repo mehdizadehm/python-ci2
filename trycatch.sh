@@ -1,5 +1,8 @@
 #!/bin/sh
 
+GREEN='\033[0;32m' 
+
+echo "${GREEN} salam"
 
 LOG_FILE="log.txt"
 > ${LOG_FILE} 

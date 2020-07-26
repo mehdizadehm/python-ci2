@@ -3,6 +3,7 @@ LOG_FILE="log.txt"
 OS=MacOS64
 MINICONDA_FILENAME=Miniconda3-latest-MacOSX-x86_64.sh
 RED='\033[0;31m'
+GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 > ${LOG_FILE} 
 
@@ -40,7 +41,7 @@ process_exit()
 process_completed()
 {
     echo  | tee /dev/fd/3 
-    echo "MintPy is installed successfully!" | tee /dev/fd/3
+    echo "${GREEN}MintPy is installed successfully.${NC}" | tee /dev/fd/3
     echo "For more detials about installtion steps please read the log.txt" 1>&3
     echo  | tee /dev/fd/3 
 }
