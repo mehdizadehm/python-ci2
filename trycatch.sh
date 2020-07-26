@@ -5,11 +5,13 @@ LOG_FILE="log.txt"
 > ${LOG_FILE} 
 
 # check arguments. if docker is given as arg. excution output should be visible while running, otherwise output should be saved in log.txt
-if [[ "$1" == docker ]]
+if [[ "$1" == log ]]
 then
     exec 3>&1 
+    echo "log is given‚"
 else
     exec 3>&1 1>>${LOG_FILE} 2>&1
+    echo "log is not given‚"
 fi
 
 

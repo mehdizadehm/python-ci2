@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 > ${LOG_FILE} 
 
 # check arguments. if log is given as arg. excution output should be visible while running, otherwise output should be saved in log.txt
-if [[ "$1" == log ]]
+if [[ $1 == log ]]
 then
     exec 3>&1 
 else
