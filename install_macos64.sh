@@ -146,10 +146,9 @@ echo  | tee /dev/fd/3
 { # try
     echo "Installing dependencies..." | tee /dev/fd/3
     echo "The installation process may take several minutes."  | tee /dev/fd/3
-    chmod +x ${MINICONDA_FILENAME} &&
-    conda config --add channels conda-forge &&
-    conda install --yes --file $MINTPY_HOME/docs/conda.txt &&
-    pip install git+https://github.com/tylere/pykml.git &&
+    $CONDA_PREFIX/bin/conda config --add channels conda-forge &&
+    $CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt &&
+    $CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git &&
 
     # install dependencies with conda
     # $CONDA_PREFIX/bin/conda config --add channels conda-forge
