@@ -34,31 +34,65 @@ git clone https://github.com/insarlab/MintPy.git $MINTPY_HOME
 # download and install miniconda3
 mkdir -p ${HOME}/tools
 cd ${HOME}/tools
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh -b -p ${HOME}/tools/miniconda3
-~/tools/miniconda3/bin/conda init bash
+
+
+{ # try
+
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &&
+    #save your output
+    echo "Miniconda Installer downloaded!"
+
+} || { # catch
+    # save log for exception 
+    echo "Could not download Miniconda!"
+    exit 1
+}
+
+
+
+{ # try
+
+    chmod +x Miniconda3-latest-Linux-x86_64.sh &&
+    ./Miniconda3-latest-Linux-x86_64.sh -b -p ${HOME}/tools/miniconda3 &&
+    ~/tools/miniconda3/bin/conda init bash &&
+    #save your output
+    echo "Miniconda installed successfully!"
+
+} || { # catch
+    # save log for exception 
+    echo "Miniconda Installation failed"
+    exit 1
+}
 
 # setup environment variable
 export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}:${PYAPS_HOME}
 export PATH=${MINTPY_HOME}/mintpy:${CONDA_PREFIX}/bin:${PATH}
 # download source code PyAPS
 git clone https://github.com/yunjunz/pyaps3.git $PYAPS_HOME/pyaps3
+
 # install dependencies
-conda config --add channels conda-forge
-conda install --yes --file $MINTPY_HOME/docs/conda.txt
-pip install git+https://github.com/tylere/pykml.git
+{ # try
 
-# install dependencies with conda
-# $CONDA_PREFIX/bin/conda config --add channels conda-forge
-# $CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt
-# $CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git
+    conda config --add channels conda-forge &&
+    conda install --yes --file $MINTPY_HOME/docs/conda.txt &&
+    pip install git+https://github.com/tylere/pykml.git &&
 
-# test installation
-python -c "import mintpy; print(mintpy.version.description)"
-smallbaselineApp.py -h
-tropo_pyaps3.py -h
+    # install dependencies with conda
+    # $CONDA_PREFIX/bin/conda config --add channels conda-forge
+    # $CONDA_PREFIX/bin/conda install --yes --file $MINTPY_HOME/docs/conda.txt
+    # $CONDA_PREFIX/bin/pip install git+https://github.com/tylere/pykml.git
 
+    #save your output
+    echo "shod"
+
+} || { # catch
+    # save log for exception 
+    echo "nashod"
+}
+
+
+
+test installation
 { # try
 
     python -c "import mintpy; print(mintpy.version.description)" &&
@@ -71,4 +105,6 @@ tropo_pyaps3.py -h
 } || { # catch
     # save log for exception 
     echo "Installation could not be completed!"
+    echo "Python test failed!"
+    exit 1
 }
