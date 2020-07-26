@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 LOG_FILE="log.txt"
 OS=MacOS64
 MINICONDA_FILENAME=Miniconda3-latest-MacOSX-x86_64.sh
@@ -63,21 +63,18 @@ export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
 
 
 ## update packages, install git and wget
-apt update
 apt-get update --yes && apt-get upgrade --yes
-# apt-get install --yes git wget
-
 
 if ! command -v git &> /dev/null
 then
     echo "Installing git..." | tee /dev/fd/3
-    apt-get install --yes git wget
+    apt-get install --yes git
 fi
 
 if ! command -v wget &> /dev/null
 then
     echo "Installing wget..." | tee /dev/fd/3
-    apt-get install --yes git wget
+    apt-get install --yes wget
 fi
 
 # download source code MintPy and 
