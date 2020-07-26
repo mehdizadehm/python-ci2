@@ -1,0 +1,32 @@
+
+MintPy
+The Miami INsar Time-series software in PYthon
+Version 1.2.3
+
+Installation starting...
+Operating System: Linux64
+Setting environment variables...
+Unable to locate an executable at "/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home/bin/apt" (-1)
+./install_linux64.sh: line 67: apt-get: command not found
+
+Downloading MintPy source code...
+Destination: /Users/meissammehdizadeh/tools/MintPy
+fatal: destination path '/Users/meissammehdizadeh/tools/MintPy' already exists and is not an empty directory.
+Mintpy downloaded!
+Downloading Miniconda for Linux64 ...
+--2020-07-26 16:42:20--  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Resolving repo.anaconda.com (repo.anaconda.com)... 2606:4700::6810:8203, 2606:4700::6810:8303, 104.16.131.3, ...
+Connecting to repo.anaconda.com (repo.anaconda.com)|2606:4700::6810:8203|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 88867207 (85M) [application/x-sh]
+Saving to: ‘Miniconda3-latest-Linux-x86_64.sh.2’
+
+     0K                                                         0% 0,00 =0s
+
+
+Cannot write to ‘Miniconda3-latest-Linux-x86_64.sh.2’ (Success).
+[0;31mCould not download Miniconda![0m
+
+You may use the README to install MintPy manually.
+If MintPy is already installed on your machine, please uninstall/remove it before installing the new version.
+
