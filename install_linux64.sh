@@ -5,7 +5,15 @@ MINICONDA_FILENAME=Miniconda3-latest-Linux-x86_64.sh
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 > ${LOG_FILE} 
-exec 3>&1 1>>${LOG_FILE} 2>&1
+
+
+# check arguments. if docker is given as arg. excution output should be visible while running, otherwise output should be saved in log.txt
+if [[ "$1" == docker ]]
+then
+    exec 3>&1 
+else
+    exec 3>&1 1>>${LOG_FILE} 2>&1
+fi
 
 process_start()
 {
