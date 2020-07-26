@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 > ${LOG_FILE} 
 
-# check arguments. if log is given as arg. excution output should be visible while running, otherwise output should be saved in log.txt
+# check arguments. if log is given as arg. execution output should be visible while running, otherwise output should be saved in log.txt
 if [[ $1 == log ]]
 then
     exec 3>&1 
@@ -19,12 +19,12 @@ process_start()
 {
     echo  | tee /dev/fd/3 
     echo "MintPy" | tee /dev/fd/3   
-    echo "The Miami INsar Time-series software in PYthon" | tee /dev/fd/3  
+    echo "The Miami INsar Time-series software in Python" | tee /dev/fd/3  
     echo "Version 1.2.3" | tee /dev/fd/3      
     echo  | tee /dev/fd/3 
     echo "Installation starting..." | tee /dev/fd/3
     echo "Operating System: ${OS}" | tee /dev/fd/3
-    echo "You may follow the installtion in log.txt" 1>&3
+    echo "You may follow the installation in log.txt" 1>&3
 }
 
 process_exit()
@@ -42,7 +42,7 @@ process_completed()
 {
     echo  | tee /dev/fd/3 
     echo "${GREEN}MintPy is installed successfully.${NC}" | tee /dev/fd/3
-    echo "For more detials about installtion steps please read the log.txt" 1>&3
+    echo "For more details about installation steps please read the log.txt" 1>&3
     echo  | tee /dev/fd/3 
 }
 
@@ -178,7 +178,7 @@ echo  | tee /dev/fd/3
     smallbaselineApp.py -h &&
     tropo_pyaps3.py -h
 
-    echo "Installation test was successfull."  | tee /dev/fd/3    
+    echo "Installation test was successfully."  | tee /dev/fd/3    
     
     #save your output
     process_completed
