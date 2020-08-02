@@ -2,5 +2,5 @@ language: bash
 os: osx
 
 script:
-    - bash install.sh log
+    - bash install.sh 
 
