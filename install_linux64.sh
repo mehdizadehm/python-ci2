@@ -1,9 +1,15 @@
 #!/bin/bash
-LOG_FILE="log.txt"
-OS=Linux64
-MINICONDA_FILENAME=Miniconda3-latest-Linux-x86_64.sh
 
-> ${LOG_FILE} 
+LOG_FILE="log.txt"
+> ${LOG_FILE}
+
+linux=false
+mac=true
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    linux=true
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    mac=true
+fi
 
 # check arguments. if log is given as arg. execution output should be visible while running, otherwise output should be saved in log.txt
 if [[ $1 == log ]]
@@ -12,6 +18,24 @@ then
 else
     exec 3>&1 1>>${LOG_FILE} 2>&1
 fi
+
+get_os()
+{
+    if $mac; then
+        return "MacOS64"
+    elif $linux; then
+        return "Linux64"
+    fi
+}
+
+get_miniconda_file()
+{
+    if $mac; then
+        return "Miniconda3-latest-MacOSX-x86_64.sh"
+    elif $linux; then
+        return "Miniconda3-latest-Linux-x86_64.sh"
+    fi
+}
 
 process_start()
 {
@@ -74,6 +98,9 @@ Install_miniconda()
         process_exit
     }
 }
+
+OS=get_os
+MINICONDA_FILENAME=get_miniconda_file
 
 process_start
 
