@@ -113,8 +113,8 @@ fi
 if ! command -v git &> /dev/null
 then
     echo "Installing git..." | tee /dev/fd/3
-    conda install -c anaconda git
-    # apt-get install --yes git
+    # conda install -c anaconda git
+    apt-get install --yes git
 fi
 
 
