@@ -73,6 +73,7 @@ Install_miniconda()
 {
     # download and install miniconda3
     { # try
+        export CONDA_PREFIX=~/tools/miniconda3
         echo "Downloading Miniconda for ${OS} ..." | tee /dev/fd/3
         wget https://repo.anaconda.com/miniconda/${MINICONDA_FILENAME} &&
         #save your output
@@ -140,8 +141,7 @@ echo "Setting environment variables..." | tee /dev/fd/3
 export MINTPY_HOME=~/tools/MintPy
 export PYTHONPATH=${PYTHONPATH}:${MINTPY_HOME}
 export PATH=${PATH}:${MINTPY_HOME}/mintpy
-export CONDA_PREFIX=~/tools/miniconda3
-
+# 
 ##--------- PyAPS -------------------##
 export PYAPS_HOME=~/tools/PyAPS
 export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}

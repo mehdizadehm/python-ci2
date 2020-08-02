@@ -6,7 +6,6 @@ Version 1.2.3
 Installation starting...
 Operating System: MacOS64
 Setting environment variables...
-./install_linux64.sh: line 128: apt-get: command not found
 
 Downloading MintPy source code...
 Destination: /Users/meissammehdizadeh/tools/MintPy
@@ -20,8 +19,326 @@ PyAPS downloaded!
 
 Installing dependencies...
 The installation process may take several minutes.
-./install_linux64.sh: line 194: /Users/meissammehdizadeh/tools/miniconda3/bin/conda: No such file or directory
-Dependencies couldn't be installed!
+Warning: 'conda-forge' already in 'channels' list, moving to the top
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
 
-You may use the README to install MintPy manually.
+## Package Plan ##
+
+  environment location: /Users/meissammehdizadeh/miniconda3
+
+  added / updated specs:
+    - cartopy
+    - cdsapi
+    - cvxopt
+    - dask-jobqueue[version='>=0.3']
+    - dask[version='>=1.0']
+    - defusedxml
+    - eccodes
+    - h5py
+    - lxml
+    - matplotlib
+    - netcdf4
+    - numpy
+    - openmp
+    - pygrib
+    - pyhdf
+    - pykdtree
+    - pyproj
+    - pyresample
+    - python[version='>=3.6']
+    - scikit-image
+    - scikit-learn
+    - scipy
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    jpeg-9d                    |       h0b31af3_0         251 KB  conda-forge
+    openmp-8.0.1               |                0           8 KB  conda-forge
+    scikit-image-0.17.2        |   py37h94625e5_1        10.2 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        10.4 MB
+
+The following NEW packages will be INSTALLED:
+
+  blosc              conda-forge/osx-64::blosc-1.20.0-hb1e8313_0
+  bokeh              conda-forge/osx-64::bokeh-2.1.1-py37hc8dfbb8_0
+  brotli             conda-forge/osx-64::brotli-1.0.7-h4a8c4bd_1004
+  brunsli            conda-forge/osx-64::brunsli-0.1-hb1e8313_0
+  c-ares             conda-forge/osx-64::c-ares-1.16.1-haf1e3a3_0
+  cartopy            pkgs/main/osx-64::cartopy-0.17.0-py37hc4b8d57_1
+  cdsapi             conda-forge/noarch::cdsapi-0.2.7-py_0
+  cftime             conda-forge/osx-64::cftime-1.2.1-py37h5be27a9_0
+  charls             conda-forge/osx-64::charls-2.1.0-h4a8c4bd_2
+  click              conda-forge/noarch::click-7.1.2-pyh9f0ad1d_0
+  cloudpickle        conda-forge/noarch::cloudpickle-1.5.0-py_0
+  configobj          conda-forge/noarch::configobj-5.0.6-py_0
+  curl               conda-forge/osx-64::curl-7.71.1-hbdca1c0_4
+  cvxopt             conda-forge/osx-64::cvxopt-1.2.5-py37h3224716_1
+  cycler             conda-forge/noarch::cycler-0.10.0-py_2
+  cytoolz            conda-forge/osx-64::cytoolz-0.10.1-py37h0b31af3_0
+  dask               conda-forge/noarch::dask-2.22.0-py_0
+  dask-core          conda-forge/noarch::dask-core-2.22.0-py_0
+  dask-jobqueue      conda-forge/noarch::dask-jobqueue-0.7.1-py_0
+  decorator          conda-forge/noarch::decorator-4.4.2-py_0
+  defusedxml         conda-forge/noarch::defusedxml-0.6.0-py_0
+  distributed        conda-forge/osx-64::distributed-2.22.0-py37hc8dfbb8_0
+  dsdp               conda-forge/osx-64::dsdp-5.8-h7674d01_1203
+  eccodes            conda-forge/osx-64::eccodes-2.18.0-h031fe05_0
+  fftw               conda-forge/osx-64::fftw-3.3.8-nompi_h9629793_1109
+  freetype           conda-forge/osx-64::freetype-2.10.2-h8da9a1a_0
+  fsspec             conda-forge/noarch::fsspec-0.8.0-py_0
+  geos               conda-forge/osx-64::geos-3.8.0-h4a8c4bd_1
+  giflib             conda-forge/osx-64::giflib-5.2.1-h0b31af3_2
+  glpk               conda-forge/osx-64::glpk-4.65-h65ac59c_1002
+  gsl                conda-forge/osx-64::gsl-2.6-ha2d443c_0
+  h5py               conda-forge/osx-64::h5py-2.10.0-nompi_py37h28defc4_104
+  hdf4               conda-forge/osx-64::hdf4-4.2.13-h84186c3_1003
+  hdf5               conda-forge/osx-64::hdf5-1.10.6-nompi_haae91d6_101
+  heapdict           conda-forge/noarch::heapdict-1.0.1-py_0
+  imagecodecs        conda-forge/osx-64::imagecodecs-2020.5.30-py37h64a549b_2
+  imageio            conda-forge/noarch::imageio-2.9.0-py_0
+  jasper             conda-forge/osx-64::jasper-1.900.1-h636a363_1006
+  joblib             conda-forge/noarch::joblib-0.16.0-py_0
+  jpeg               conda-forge/osx-64::jpeg-9d-h0b31af3_0
+  jxrlib             conda-forge/osx-64::jxrlib-1.1-h0b31af3_2
+  kiwisolver         conda-forge/osx-64::kiwisolver-1.2.0-py37ha1cc60f_0
+  krb5               conda-forge/osx-64::krb5-1.17.1-h14dd6a4_2
+  lcms2              conda-forge/osx-64::lcms2-2.11-h174193d_0
+  lerc               conda-forge/osx-64::lerc-2.2-hb1e8313_0
+  libaec             conda-forge/osx-64::libaec-1.0.4-h4a8c4bd_1
+  libblas            conda-forge/osx-64::libblas-3.8.0-14_openblas
+  libcblas           conda-forge/osx-64::libcblas-3.8.0-14_openblas
+  libcurl            conda-forge/osx-64::libcurl-7.71.1-he6690cf_4
+  libedit            conda-forge/osx-64::libedit-3.1.20191231-hed1e85f_1
+  libev              conda-forge/osx-64::libev-4.33-haf1e3a3_0
+  libgfortran        conda-forge/osx-64::libgfortran-4.0.0-2
+  liblapack          conda-forge/osx-64::liblapack-3.8.0-14_openblas
+  libnetcdf          conda-forge/osx-64::libnetcdf-4.7.4-nompi_hc5b2cf3_105
+  libnghttp2         conda-forge/osx-64::libnghttp2-1.41.0-h8a08a2b_1
+  libopenblas        conda-forge/osx-64::libopenblas-0.3.7-h3d69b6c_4
+  libpng             conda-forge/osx-64::libpng-1.6.37-hbbe82c9_1
+  libssh2            conda-forge/osx-64::libssh2-1.9.0-h39bdce6_5
+  libtiff            conda-forge/osx-64::libtiff-4.1.0-h2ae36a8_6
+  libwebp-base       conda-forge/osx-64::libwebp-base-1.1.0-h0b31af3_3
+  libxslt            conda-forge/osx-64::libxslt-1.1.33-h29b7fa6_1
+  libzopfli          conda-forge/osx-64::libzopfli-1.0.3-h4a8c4bd_0
+  llvm-openmp        conda-forge/osx-64::llvm-openmp-8.0.1-h770b8ee_0
+  locket             conda-forge/noarch::locket-0.2.0-py_2
+  lxml               conda-forge/osx-64::lxml-4.5.2-py37heb1707f_0
+  matplotlib         conda-forge/osx-64::matplotlib-3.3.0-1
+  matplotlib-base    conda-forge/osx-64::matplotlib-base-3.3.0-py37h886f89f_1
+  metis              conda-forge/osx-64::metis-5.1.0-h4a8c4bd_1005
+  msgpack-python     conda-forge/osx-64::msgpack-python-1.0.0-py37ha1cc60f_1
+  netcdf4            conda-forge/osx-64::netcdf4-1.5.4-nompi_py37h386ecc7_100
+  networkx           conda-forge/noarch::networkx-2.4-py_1
+  numpy              conda-forge/osx-64::numpy-1.19.1-py37h7e69742_0
+  olefile            conda-forge/noarch::olefile-0.46-py_0
+  openjpeg           conda-forge/osx-64::openjpeg-2.3.1-h254dc36_3
+  openmp             conda-forge/osx-64::openmp-8.0.1-0
+  owslib             conda-forge/noarch::owslib-0.20.0-py_0
+  packaging          conda-forge/noarch::packaging-20.4-pyh9f0ad1d_0
+  pandas             conda-forge/osx-64::pandas-1.1.0-py37hdadc0f0_0
+  partd              conda-forge/noarch::partd-1.1.0-py_0
+  pillow             conda-forge/osx-64::pillow-7.2.0-py37hfd78ece_1
+  proj               conda-forge/osx-64::proj-6.2.1-h773a61f_0
+  pyepsg             conda-forge/noarch::pyepsg-0.4.0-py_0
+  pygrib             conda-forge/osx-64::pygrib-2.0.4-py37hfee32ab_0
+  pyhdf              conda-forge/osx-64::pyhdf-0.10.2-py37hcfd784f_1
+  pykdtree           conda-forge/osx-64::pykdtree-1.3.1-py37h10e2902_1003
+  pyparsing          conda-forge/noarch::pyparsing-2.4.7-pyh9f0ad1d_0
+  pyproj             pkgs/main/osx-64::pyproj-2.6.1.post1-py37h6d9c95c_1
+  pyresample         conda-forge/osx-64::pyresample-1.16.0-py37h94625e5_0
+  pyshp              conda-forge/noarch::pyshp-2.1.0-py_0
+  python-dateutil    conda-forge/noarch::python-dateutil-2.8.1-py_0
+  pywavelets         conda-forge/osx-64::pywavelets-1.1.1-py37h10e2902_1
+  scikit-image       conda-forge/osx-64::scikit-image-0.17.2-py37h94625e5_1
+  scikit-learn       conda-forge/osx-64::scikit-learn-0.21.3-py37hd4ffd6c_0
+  scipy              conda-forge/osx-64::scipy-1.5.2-py37h2702c91_0
+  shapely            conda-forge/osx-64::shapely-1.7.0-py37h5627c0d_1
+  snappy             conda-forge/osx-64::snappy-1.1.8-h4a8c4bd_3
+  sortedcontainers   conda-forge/noarch::sortedcontainers-2.2.2-pyh9f0ad1d_0
+  suitesparse        conda-forge/osx-64::suitesparse-5.7.2-h0e59142_0
+  tbb                conda-forge/osx-64::tbb-2019.9-ha1b3eb9_1
+  tblib              conda-forge/noarch::tblib-1.6.0-py_0
+  tifffile           conda-forge/noarch::tifffile-2020.7.24-py_0
+  tornado            conda-forge/osx-64::tornado-6.0.4-py37h9bfed18_1
+  typing_extensions  conda-forge/noarch::typing_extensions-3.7.4.2-py_0
+  zfp                conda-forge/osx-64::zfp-0.5.5-h4a8c4bd_1
+  zict               conda-forge/noarch::zict-2.0.0-py_0
+
+
+
+Downloading and Extracting Packages
+jpeg-9d              | 251 KB    |            |   0% jpeg-9d              | 251 KB    | 6          |   6% jpeg-9d              | 251 KB    | ########## | 100% 
+openmp-8.0.1         | 8 KB      |            |   0% openmp-8.0.1         | 8 KB      | ########## | 100% 
+scikit-image-0.17.2  | 10.2 MB   |            |   0% scikit-image-0.17.2  | 10.2 MB   |            |   0% scikit-image-0.17.2  | 10.2 MB   | 6          |   7% scikit-image-0.17.2  | 10.2 MB   | #3         |  13% scikit-image-0.17.2  | 10.2 MB   | #9         |  20% scikit-image-0.17.2  | 10.2 MB   | ##6        |  26% scikit-image-0.17.2  | 10.2 MB   | ###3       |  33% scikit-image-0.17.2  | 10.2 MB   | ###9       |  39% scikit-image-0.17.2  | 10.2 MB   | ####5      |  46% scikit-image-0.17.2  | 10.2 MB   | #####2     |  53% scikit-image-0.17.2  | 10.2 MB   | #####8     |  59% scikit-image-0.17.2  | 10.2 MB   | ######5    |  65% scikit-image-0.17.2  | 10.2 MB   | #######2   |  72% scikit-image-0.17.2  | 10.2 MB   | #######8   |  78% scikit-image-0.17.2  | 10.2 MB   | ########5  |  85% scikit-image-0.17.2  | 10.2 MB   | #########1 |  92% scikit-image-0.17.2  | 10.2 MB   | #########7 |  98% scikit-image-0.17.2  | 10.2 MB   | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Collecting git+https://github.com/tylere/pykml.git
+  Cloning https://github.com/tylere/pykml.git to /private/var/folders/51/g0g_sqk95mx6z2hf56ps2y480000gn/T/pip-req-build-2cqen4yg
+  Running command git clone -q https://github.com/tylere/pykml.git /private/var/folders/51/g0g_sqk95mx6z2hf56ps2y480000gn/T/pip-req-build-2cqen4yg
+Requirement already satisfied: lxml>=3.3.6 in /Users/meissammehdizadeh/miniconda3/lib/python3.7/site-packages (from pykml==0.2.0) (4.5.2)
+Building wheels for collected packages: pykml
+  Building wheel for pykml (setup.py): started
+  Building wheel for pykml (setup.py): finished with status 'done'
+  Created wheel for pykml: filename=pykml-0.2.0-py3-none-any.whl size=41123 sha256=9810a41bb727fca527f3993f6b14dd52a56ef3d2d8e4b61ffea1287cea5b4314
+  Stored in directory: /private/var/folders/51/g0g_sqk95mx6z2hf56ps2y480000gn/T/pip-ephem-wheel-cache-vvrvsmxi/wheels/b4/e0/96/bc7b9e36fcbf16d022538c5a1971d2e9d8438d5d3496a3ec8c
+Successfully built pykml
+Installing collected packages: pykml
+Successfully installed pykml-0.2.0
+Dependencies installed successfully.
+
+Testing Installation...
+MintPy release version v1.2.3-11, release date 2020-07-25
+usage: smallbaselineApp.py [-h] [--dir WORKDIR] [-g] [-H] [-v] [--noplot]
+                           [--start STEP] [--end STEP] [--dostep STEP]
+                           [customTemplateFile]
+
+Routine Time Series Analysis for Small Baseline InSAR Stack
+
+positional arguments:
+  customTemplateFile    custom template with option settings.
+                        ignored if the default smallbaselineApp.cfg is input.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --dir WORKDIR, --work-dir WORKDIR
+                        work directory, (default: ./).
+  -g                    generate default template (if it does not exist) and exit.
+  -H                    print the default template file and exit.
+  -v, --version         print software version and exit
+  --noplot              do not plot results at the end of the processing.
+
+steps processing (start/end/dostep):
+  Command line options for steps processing with names are chosen from the following list:
+  
+  ['load_data', 'modify_network', 'reference_point', 'quick_overview', 'correct_unwrap_error']
+  ['invert_network', 'correct_LOD', 'correct_troposphere', 'deramp', 'correct_topography']
+  ['residual_RMS', 'reference_date', 'velocity', 'geocode', 'google_earth', 'hdfeos5']
+  
+  In order to use either --start or --dostep, it is necessary that a
+  previous run was done using one of the steps options to process at least
+  through the step immediately preceding the starting step of the current run.
+
+  --start STEP          start processing at the named step (default: load_data).
+  --end STEP, --stop STEP
+                        end processing at the named step (default: hdfeos5)
+  --dostep STEP         run processing at the named step only
+
+reference:
+  Yunjun, Z., H. Fattahi, and F. Amelung (2019), Small baseline InSAR time series analysis: 
+  Unwrapping error correction and noise reduction, Computers & Geosciences, 133, 104331,
+  doi:10.1016/j.cageo.2019.104331.
+
+example:
+  smallbaselineApp.py                         #run with default template 'smallbaselineApp.cfg'
+  smallbaselineApp.py <custom_template>       #run with default and custom templates
+  smallbaselineApp.py -h / --help             #help
+  smallbaselineApp.py -H                      #print    default template options
+  smallbaselineApp.py -g                      #generate default template if it does not exist
+  smallbaselineApp.py -g <custom_template>    #generate/update default template based on custom template
+
+  # Run with --start/stop/dostep options
+  smallbaselineApp.py GalapagosSenDT128.template --dostep velocity  #run at step 'velocity' only
+  smallbaselineApp.py GalapagosSenDT128.template --end load_data    #end after step 'load_data'
+usage: tropo_pyaps3.py [-h] [-f DIS_FILE] [-d [DATE_LIST [DATE_LIST ...]]]
+                       [--hour HOUR] [-o COR_DIS_FILE] [-m {ERA5}]
+                       [--delay {wet,comb,dry}] [-w WEATHER_DIR]
+                       [-g GEOM_FILE] [--tropo-file TROPO_FILE] [--verbose]
+
+Tropospheric correction using weather models
+  PyAPS is used to download and calculate the delay for each acquisition.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f DIS_FILE, --file DIS_FILE
+                        timeseries HDF5 file, i.e. timeseries.h5
+  -d [DATE_LIST [DATE_LIST ...]], --date-list [DATE_LIST [DATE_LIST ...]]
+                        List of dates in YYYYMMDD or YYMMDD format. It can be:
+                        a) list of strings in YYYYMMDD or YYMMDD format OR
+                        b) a text file with the first column as list of date in YYYYMMDD or YYMMDD format OR
+                        c) a text file with Sentinel-1 SAFE filenames
+                        e.g.: SAFE_files.txt:
+                            /data/SanAndreasSenDT42/SLC/S1B_IW_SLC__1SDV_20191117T140737_20191117T140804_018968_023C8C_82DC.zip
+                            /data/SanAndreasSenDT42/SLC/S1A_IW_SLC__1SDV_20191111T140819_20191111T140846_029864_036803_69CA.zip
+                            ...
+  --hour HOUR           time of data in HH, e.g. 12, 06
+  -o COR_DIS_FILE       Output file name for trospheric corrected timeseries.
+
+delay calculation:
+  -m {ERA5}, --model {ERA5}, -s {ERA5}
+                        source of the atmospheric model (default: ERA5).
+  --delay {wet,comb,dry}
+                        Delay type to calculate, comb contains both wet and dry delays (default: comb).
+  -w WEATHER_DIR, --dir WEATHER_DIR, --weather-dir WEATHER_DIR
+                        parent directory of downloaded weather data file (default: ${WEATHER_DIR}).
+                        e.g.: --weather-dir ~/atmosphere
+                        atmosphere/
+                            /ERA5
+                                ERA5_N20_N40_E120_E140_20060624_14.grb
+                                ERA5_N20_N40_E120_E140_20060924_14.grb
+                                ...
+                            /ECMWF
+                                ERA-Int_20030329_06.grb
+                                ERA-Int_20030503_06.grb
+                                ...
+                            /MERRA
+                                merra-20110126-06.nc4
+                                merra-20110313-06.nc4
+                                ...
+  -g GEOM_FILE, --geomtry GEOM_FILE
+                        geometry file including height, incidenceAngle and/or latitude and longitude
+  --tropo-file TROPO_FILE
+                        tropospheric delay file name
+  --verbose             Verbose message.
+
+reference:
+  Jolivet, R., R. Grandin, C. Lasserre, M.-P. Doin and G. Peltzer (2011), Systematic InSAR tropospheric
+  phase delay corrections from global meteorological reanalysis data, Geophys. Res. Lett., 38, L17311,
+  doi:10.1029/2011GL048757
+
+  Jolivet, R., P. S. Agram, N. Y. Lin, M. Simons, M. P. Doin, G. Peltzer, and Z. Li (2014), Improving
+  InSAR geodesy using global atmospheric models, Journal of Geophysical Research: Solid Earth, 119(3),
+  2324-2341, doi:10.1002/2013JB010588.
+
+  # ERA-5
+  Copernicus Climate Change Service (2017): ERA5: Fifth generation of ECMWF atmospheric reanalyses of 
+  the global climate. Copernicus Climate Change Service Climate Data Store, 
+  date of access: {your_date_of_access}. https://cds.climate.copernicus.eu/cdsapp#!/hom
+
+Global Atmospheric Models:
+  re-analysis_dataset      coverage  temp_resolution  spatial_resolution       latency       assimilation
+  --------------------------------------------------------------------------------------------------------
+  ERA-5(T) (ECMWF)          global       hourly        0.25 deg (~31 km)   3 months (5 days)    4D-Var
+  ERA-Int  (ECMWF)          global       6-hourly      0.75 deg (~79 km)        2 months        4D-Var
+  MERRA(2) (NASA Goddard)   global       6-hourly     0.5*0.625 (~50 km)       2-3 weeks        3D-Var
+  NARR     (NOAA, working from Jan 1979 to Oct 2014)
+
+Notes for data access:
+  For MERRA2, you need an Earthdata account, and pre-authorize the "NASA GESDISC DATA ARCHIVE" application
+      following https://disc.gsfc.nasa.gov/earthdata-login.
+  For ERA-5 from CDS, you need to agree to the Terms of Use of every datasets that you intend to download.
+
+example:
+  # download datasets, calculate tropospheric delays and correct time-series file.
+  tropo_pyaps3.py -f timeseries.h5 -g inputs/geometryRadar.h5
+  tropo_pyaps3.py -f filt_fine.unw -g ../../../mintpy/inputs/geometryRadar.h5
+
+  # download datasets, calculate tropospheric delays
+  tropo_pyaps3.py -d date.list         --hour 12 -m ERA5  -g inputs/geometryGeo.h5
+  tropo_pyaps3.py -d 20151002 20151003 --hour 12 -m MERRA -g inputs/geometryRadar.h5
+
+  # download datasets (covering the whole world)
+  tropo_pyaps3.py -d date.list --hour 12
+  tropo_pyaps3.py -d SAFE_files.txt
+  # download datasets (covering the area of interest)
+  tropo_pyaps3.py -d SAFE_files.txt -g inputs/geometryRadar.h5
+Installation test was successfully.
+
+MintPy is installed successfully.
 
