@@ -1,2 +1,27 @@
-./trycatch.sh: line 44: syntax error near unexpected token `('
-./trycatch.sh: line 44: `OS=get_os()'
+
+MintPy
+The Miami INsar Time-series software in Python
+Version 1.2.3
+
+Installation starting...
+Operating System: MacOS64
+Setting environment variables...
+./install_linux64.sh: line 128: apt-get: command not found
+
+Downloading MintPy source code...
+Destination: /Users/meissammehdizadeh/tools/MintPy
+Cloning into '/Users/meissammehdizadeh/tools/MintPy'...
+Mintpy downloaded!
+
+Downloading PyAPS source code...
+Destination: /Users/meissammehdizadeh/tools/PyAPS
+Cloning into '/Users/meissammehdizadeh/tools/PyAPS/pyaps3'...
+PyAPS downloaded!
+
+Installing dependencies...
+The installation process may take several minutes.
+./install_linux64.sh: line 194: /Users/meissammehdizadeh/tools/miniconda3/bin/conda: No such file or directory
+Dependencies couldn't be installed!
+
+You may use the README to install MintPy manually.
+
