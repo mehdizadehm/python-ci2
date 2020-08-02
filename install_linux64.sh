@@ -100,7 +100,7 @@ cd ${HOME}/tools
 if ! command -v conda &> /dev/null
 then
     echo "Installing miniconda..." | tee /dev/fd/3
-    Install_miniconda()
+    Install_miniconda
 fi
 
 if ! command -v git &> /dev/null
