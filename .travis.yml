@@ -1,11 +1,11 @@
-language: shell
+language: bash
 os:
 - osx
 dist: trusty
 deploy:
   # deploy develop to the staging environment
   - provider: script
-    script: bash scripts/install.sh log
+    script: bash install.sh log
     on:
       branch: develop
   # deploy master to production
