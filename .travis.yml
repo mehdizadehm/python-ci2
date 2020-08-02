@@ -1,14 +1,6 @@
 language: bash
-os:
-- osx
-dist: trusty
-deploy:
-  # deploy develop to the staging environment
-  - provider: script
-    script: bash install.sh log
-    on:
-      branch: develop
-  # deploy master to production
-  - provider: script
-    on:
-      branch: master
+os: osx
+
+script:
+    - bash install.sh log
+
