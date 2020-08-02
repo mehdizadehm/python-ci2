@@ -1,3 +1,7 @@
+language: shell
+os:
+- osx
+dist: trusty
 deploy:
   # deploy develop to the staging environment
   - provider: script
