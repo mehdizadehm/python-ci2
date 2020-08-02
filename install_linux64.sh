@@ -4,7 +4,7 @@ LOG_FILE="log.txt"
 > ${LOG_FILE}
 
 linux=false
-mac=true
+mac=false
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     linux=true
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -19,21 +19,23 @@ else
     exec 3>&1 1>>${LOG_FILE} 2>&1
 fi
 
+OS=
 get_os()
 {
     if $mac; then
-        return "MacOS64"
+        OS="MacOS64"
     elif $linux; then
-        return "Linux64"
+        OS="Linux64"
     fi
 }
 
+MINICONDA_FILENAME=
 get_miniconda_file()
 {
     if $mac; then
-        return "Miniconda3-latest-MacOSX-x86_64.sh"
+        MINICONDA_FILENAME="Miniconda3-latest-MacOSX-x86_64.sh"
     elif $linux; then
-        return "Miniconda3-latest-Linux-x86_64.sh"
+        MINICONDA_FILENAME="Miniconda3-latest-Linux-x86_64.sh"
     fi
 }
 
@@ -99,8 +101,12 @@ Install_miniconda()
     }
 }
 
-OS=get_os
-MINICONDA_FILENAME=get_miniconda_file
+# ################################# #
+# ####### Start Installing ######## #
+# ################################# #
+
+get_os
+get_miniconda_file
 
 process_start
 
