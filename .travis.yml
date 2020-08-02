@@ -1,5 +1,10 @@
 deploy:
-  provider: script
-  script: bash ./install.sh
-  on:
-    branch: master
+  # deploy develop to the staging environment
+  - provider: script
+    script: bash scripts/install.sh log
+    on:
+      branch: develop
+  # deploy master to production
+  - provider: script
+    on:
+      branch: master
