@@ -92,10 +92,17 @@ export PYTHONPATH=${PYTHONPATH}:${PYAPS_HOME}
 
 
 ## update packages, install git and wget
-# apt-get update --yes && apt-get upgrade --yes
+apt-get update --yes && apt-get upgrade --yes
 
 mkdir -p ${HOME}/tools
 cd ${HOME}/tools
+
+if ! command -v wget &> /dev/null
+then
+    echo "Installing wget..." | tee /dev/fd/3
+    # conda install -c anaconda wget
+    apt-get install --yes wget
+fi
 
 if ! command -v conda &> /dev/null
 then
@@ -110,12 +117,7 @@ then
     # apt-get install --yes git
 fi
 
-if ! command -v wget &> /dev/null
-then
-    echo "Installing wget..." | tee /dev/fd/3
-    conda install -c anaconda wget
-    # apt-get install --yes wget
-fi
+
 
 # download source code MintPy and 
 { # try
