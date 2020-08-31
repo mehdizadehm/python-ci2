@@ -6,8 +6,8 @@ jobs:
         user: root
     steps:
       - checkout
-      - run:
-          name: Install MintPy
+      - run: 
+          name: Install MintPy 2
           command: |
             ./install.sh log
 workflows:
